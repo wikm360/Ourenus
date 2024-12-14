@@ -1,6 +1,6 @@
 {
-  "remaining_volume": "Осталось траффика",
-  "initial_volume": "Весь траффик",
+  "remaining_volume": "Осталось трафика",
+  "initial_volume": "Весь трафик",
   "remaining_time": "Осталось времени",
   "initial_time": "Всего времени",
   "megabytes": "МБ",
@@ -43,5 +43,5 @@
   "free": "Бесплатно",
   "light": "Светлая",
   "dark": "Темная",
-  "ended": "Закончилось"
+  "ended": "Закончилась"
 }
