@@ -53,7 +53,7 @@ export const extractNameFromConfigURL = (url) => {
 
 
 export const calculateRemainingTime = (expire, t) => {
-  if (!expire) return t("unknown");
+  if (!expire) return t("infinity");
 
   let expireTimestamp;
   if (typeof expire === "number") {

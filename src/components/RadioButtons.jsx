@@ -34,7 +34,8 @@ const RadioButtons = ({ setIsDarkMode }) => {
   };
 
   const handleLangChange = () => {
-    const newLang = lang === "fa" ? "en" : "fa";
+    const newLang =
+      lang === "fa" ? import.meta.env.VITE_SECOND_LANG || "en" : "fa";
     i18n.changeLanguage(newLang);
     Cookies.set("language", newLang, { expires: 90 });
   };
@@ -81,10 +82,12 @@ const RadioButtons = ({ setIsDarkMode }) => {
           icon={"فارسی"}
         />
         <CapsuleButton
-          label="EN"
-          isActive={lang === "en"}
+          label={import.meta.env.VITE_SECOND_LANG || "en"}
+          isActive={lang === import.meta.env.VITE_SECOND_LANG || "en"}
           onClick={handleLangChange}
-          icon={"English"}
+          icon={
+            import.meta.env.VITE_SECOND_LANG === "ru" ? "Русский" : "English"
+          }
         />
       </Grid>
       {/* Theme Toggle */}
