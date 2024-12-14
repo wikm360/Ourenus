@@ -29,7 +29,7 @@ function CircularProgressWithLabel({ value }) {
         typographyGradient: theme.colors.gradients.high.typographyGradient,
       };
     }
-    if (value <= 30 || value > 100) {
+    if (value <= 30) {
       return {
         gradientColors: theme.colors.gradients.high.colors[theme.palette.mode],
         backgroundColor: theme.colors.gradients.high.background,
@@ -52,7 +52,7 @@ function CircularProgressWithLabel({ value }) {
   };
 
   const processedValue =
-    value === Infinity ? 0 : value > 100 ? 100 : value > 0 ? value : 0;
+    value === Infinity ? Infinity : value > 100 ? 100 : value > 0 ? value : 0;
 
   const { gradientColors, backgroundColor, typographyGradient } =
     getStyles(value);
@@ -106,7 +106,9 @@ function CircularProgressWithLabel({ value }) {
             textAlign: "center",
           }}
         >
-          {`${Math.round(processedValue)}%`}
+          {`${
+            processedValue === Infinity ? "∞" : Math.round(processedValue) + "%"
+          }`}
         </Typography>
       </Box>
 

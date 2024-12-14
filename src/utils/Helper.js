@@ -86,7 +86,7 @@ export const calculateUsedTimePercentage = (expireTimestamp) => {
   } else if (typeof expireTimestamp === "number") {
     expireTimeInSeconds = expireTimestamp;
   } else {
-    return 0;
+    return Infinity;
   }
 
   const remainingSeconds = expireTimeInSeconds - Math.floor(Date.now() / 1000);
@@ -111,7 +111,7 @@ export const calculateUsedTimePercentage = (expireTimestamp) => {
     return ((180 - daysRemaining) / 180) * 100;
   }
 
-  return 0;
+  return Infinity;
 };
 
 export const formatTraffic = (bytes, t) => {

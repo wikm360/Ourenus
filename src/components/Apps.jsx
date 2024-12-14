@@ -69,7 +69,7 @@ const getAccordionStyles = (theme) => ({
   marginBottom: ".8rem",
   background:
     theme === "light" ? "rgba(255, 255, 255, 0.1)" : "rgba(0, 0, 0, 0.1)",
-  color: theme.colors.BWColorRevert[theme.palette.mode],
+  color: theme.colors.BWColorRevert.light,
   "&.Mui-expanded": {
     background:
       theme === "light" ? "rgba(255, 255, 255, 0.1)" : "rgba(0, 0, 0, 0.3)",
@@ -343,7 +343,7 @@ const Apps = ({ subLink }) => {
                   expandIcon={
                     <ArrowDropDownIcon
                       sx={{
-                        color: theme.colors.BWColorRevert[theme.palette.mode],
+                        color: theme.colors.BWColorRevert.light,
                       }}
                     />
                   }

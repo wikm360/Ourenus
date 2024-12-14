@@ -18,7 +18,7 @@ const UsageBox = ({ type, value, total, remaining }) => {
   const getTypographyGradient = (v) => {
     if (v === Infinity) {
       return `linear-gradient(0deg, ${theme.palette.success.main}, ${theme.palette.success.dark})`;
-    } else if (v <= 30 || v > 100) {
+    } else if (v <= 30) {
       return `linear-gradient(0deg, ${theme.palette.success.main}, ${theme.palette.success.dark})`;
     } else if (v <= 70) {
       return `linear-gradient(0deg, ${theme.palette.warning.main}, ${theme.palette.warning.dark})`;
@@ -82,7 +82,9 @@ const UsageBox = ({ type, value, total, remaining }) => {
             fontWeight: "700",
           }}
         >
-          {remainingParsed.number}
+          {remainingParsed.text === t("infinity")
+            ? remainingParsed.text
+            : remainingParsed.number}
         </Typography>
         <Typography
           variant="h6"
@@ -119,7 +121,9 @@ const UsageBox = ({ type, value, total, remaining }) => {
             {totaltitle}
           </Typography>
           <Typography variant="h6" component="div">
-            {totalParsed.number}
+            {totalParsed.text === t("infinity")
+              ? totalParsed.text
+              : totalParsed.number}
           </Typography>
           <Typography
             variant="h6"
