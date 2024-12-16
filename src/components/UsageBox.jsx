@@ -16,7 +16,7 @@ const UsageBox = ({ type, value, total, remaining }) => {
   };
 
   const getTypographyGradient = (v) => {
-    if (v === Infinity) {
+    if (v === Infinity || Number.isNaN(v)) {
       return `linear-gradient(0deg, ${theme.palette.success.main}, ${theme.palette.success.dark})`;
     } else if (v <= 30) {
       return `linear-gradient(0deg, ${theme.palette.success.main}, ${theme.palette.success.dark})`;
