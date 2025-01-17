@@ -88,7 +88,10 @@ const Configs = ({
                 return (
                   <ListItem
                     key={index}
-                    onClick={() => handleOpen()}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleOpen(title, filteredLinks?.[index], index);
+                    }}
                     sx={liStyle}
                   >
                     <Grid
